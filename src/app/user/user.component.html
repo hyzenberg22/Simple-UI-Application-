@@ -1,0 +1,11 @@
+<div>
+  <button>
+    <!-- This is called as the property binding  -->
+    <img
+      [src]="'assets/users/' + slectetdUsers.avatar"
+      [alt]="slectetdUsers.name"
+    />
+    <!-- This is called as the string interpolation -->
+    <span>{{ slectetdUsers.name }}</span>
+  </button>
+</div>
