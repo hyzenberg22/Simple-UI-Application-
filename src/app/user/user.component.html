@@ -2,11 +2,12 @@
   <!-- we can add the event listners to the button  -->
   <button (click)="onSelectUser()">
     <!-- This is called as the property binding  -->
+    <!-- the signal value is set as a function -->
     <img
       [src]="imagePath"
-      [alt]="slectetdUsers.name"
+      [alt]="slectetdUsers().name"
     />
     <!-- This is called as the string interpolation -->
-    <span>{{ slectetdUsers.name }}</span>
+    <span>{{ slectetdUsers().name }}</span>
   </button>
 </div>
