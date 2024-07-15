@@ -1,4 +1,4 @@
-import { Component, signal} from '@angular/core';
+import { Component, computed, signal} from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
 
 //to generate the random number
@@ -17,9 +17,13 @@ export class UserComponent {
 
   //We are making a getter for the computaion in the html avater file
   //this keyword as we are using this inside the class
-  get imagePath() {
-    return 'assets/users/' + this.slectetdUsers.avatar;
-  }
+
+  // get imagePath() {
+  //   return 'assets/users/' + this.slectetdUsers.avatar;
+  // }
+
+  // now with the signal we can directly use the computed path
+  imagePath = computed(()=> 'assets/users/' + this.slectetdUsers().avatar)
 
   //for the event listner button method
   onSelectUser() {
