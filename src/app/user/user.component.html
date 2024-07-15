@@ -1,8 +1,9 @@
 <div>
-  <button>
+  <!-- we can add the event listners to the button  -->
+  <button (click)="onSelectUser()">
     <!-- This is called as the property binding  -->
     <img
-      [src]="'assets/users/' + slectetdUsers.avatar"
+      [src]="imagePath"
       [alt]="slectetdUsers.name"
     />
     <!-- This is called as the string interpolation -->
