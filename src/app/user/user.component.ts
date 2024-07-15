@@ -22,6 +22,7 @@ export class UserComponent {
 
   //for the event listner button method
   onSelectUser() {
-    console.log('The user is clicked');
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.slectetdUsers = DUMMY_USERS[randomIndex];
   }
 }
