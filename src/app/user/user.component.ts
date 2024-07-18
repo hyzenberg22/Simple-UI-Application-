@@ -13,8 +13,8 @@ import { Component, input, Input} from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input() avater!:string;
-  @Input() name!:string;
+  @Input({required: true}) avater!:string;
+  @Input({required:true}) name!:string;
 
 
   get imagePath(){
