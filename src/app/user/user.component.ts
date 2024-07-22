@@ -1,5 +1,5 @@
 //---------------------all the Imports----------------------------
-import { Component,  EventEmitter,  Input, Output, } from '@angular/core';
+import { Component,  EventEmitter,  Input, output, Output } from '@angular/core';
 
 
 
@@ -16,8 +16,9 @@ export class UserComponent {
   @Input({required: true}) id!: string;
   @Input({required: true}) avater!:string;
   @Input({required:true}) name!:string;
-  @Output() select = new EventEmitter();
+  // select = output<string>();
 
+  @Output() select = new EventEmitter();
 
   // avatar = input.required<string>();
   // name = input.required<string>();
