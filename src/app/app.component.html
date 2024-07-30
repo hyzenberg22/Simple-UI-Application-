@@ -3,24 +3,14 @@
 
 <!-- We can use the self closing tags if ther are noting in between  -->
 <main>
-  <ul id="users">
-    <li>
-      <!-- Insted of the user components saperatly we can directly use the user object -->
-      <app-user [user]="users[0]" (select)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-user [user]="users[1]" (select)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-user [user]="users[2]" (select)="onSelectUser($event)" />
-    </li>
-    <li>
-      <app-user [user]="users[3]" (select)="onSelectUser($event)" />
-    </li>
-  </ul>
 
+  <ul id="users">
+    <!-- Instead of the user hardcoded we can use an array and iterate -->
+    @for (user of users; track user.id) {
+    <li><app-user [user]="user" (select)="onSelectUser($event)" /></li>
+    }
+  </ul>
   <!-- This is the task component template -->
-  <app-tasks
-    [name]="selectedUser ? selectedUser.name : 'The user is not present'"
-  />
+  <app-tasks [name]="selectedUser ? selectedUser.name : 'The user is not present'" />
+
 </main>
