@@ -29,5 +29,5 @@ export const DUMMY_USERS = [
     id: 'u6',
     name: 'Shubhajit Sarkar',
     avater: 'user-6.jpg',
-  },
+  }
 ];

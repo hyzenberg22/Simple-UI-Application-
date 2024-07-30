@@ -11,6 +11,12 @@
     }
   </ul>
   <!-- This is the task component template -->
-  <app-tasks [name]="selectedUser ? selectedUser.name : 'The user is not present'" />
+  <!-- Now we can make it inside the conditional statement and run if the selectedUser is defined
+  now the Ts will understand that the selected user can't be undefined inside the conditional operator -->
+  @if (selectedUser) {
+    <app-tasks [name]="selectedUser.name"/>
+  }@else {
+    <p id="fallback">Select the User to see the details </p>
+  }
 
 </main>

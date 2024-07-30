@@ -16,7 +16,7 @@ export class AppComponent {
   users = DUMMY_USERS;
 
   // This will be visible to the user tasks
-  selectedUserId = 'u1';
+  selectedUserId?: string;
 
   // we are targeting the id from the user dummy file
   get selectedUser() {
