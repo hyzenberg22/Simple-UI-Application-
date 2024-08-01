@@ -7,14 +7,11 @@
   </header>
 
   <ul>
-    <li>
-      <app-task />
-    </li>
-    <li>
-      <app-task />
-    </li>
-    <li>
-      <app-task />
-    </li>
+    <!-- now we take the tasks and iterate the for-loop to run 3 times -->
+    @for (task of selectedUserTasks; track task.id){
+      <li>
+        <app-task />
+      </li>
+    }
   </ul>
 </section>
