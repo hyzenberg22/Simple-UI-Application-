@@ -20,6 +20,8 @@ button {
 }
 
 button:hover,
+
+/* This is the style for the user highlighted when selected */
 button:active,
 .active {
   background-color: #9965dd;

@@ -1,6 +1,7 @@
 <div>
   <!-- we can add the event listners to the button  -->
-  <button (click)="onSelectUser()">
+  <!-- now we have the active css class and it takes the value from the selected value and  -->
+  <button [class.active]="selected" (click)="onSelectUser()">
     <img [src]="imagePath" [alt]="user.name" />
     <span>{{ user.name }}</span>
   </button>

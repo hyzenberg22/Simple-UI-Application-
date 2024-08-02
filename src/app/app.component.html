@@ -7,7 +7,7 @@
   <ul id="users">
     <!-- Instead of the user hardcoded we can use an array and iterate -->
     @for (user of users; track user.id) {
-    <li><app-user [user]="user" (select)="onSelectUser($event)" /></li>
+    <li><app-user [user]="user" [selected]="user.id === selectedUserId" (select)="onSelectUser($event)" /></li>
     }
   </ul>
   <!-- This is the task component template -->
