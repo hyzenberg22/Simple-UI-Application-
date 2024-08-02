@@ -38,6 +38,20 @@ export class TasksComponent {
       title: 'Push the code to the git',
       summery : 'Push the code to the git hub',
       dueDate: '2025-12-31'
+    },
+    {
+      id : 't4',
+      userId: 'u4',
+      title: 'Push the code to the git',
+      summery : 'Push the code to the git hub',
+      dueDate: '2025-12-31'
+    },
+    {
+      id : 't6',
+      userId: 'u6',
+      title: 'Push the code to the git another user',
+      summery : 'Push the code to the git hub',
+      dueDate: '2025-12-31'
     }
   ];
 

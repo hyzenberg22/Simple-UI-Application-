@@ -10,7 +10,8 @@
     <!-- now we take the tasks and iterate the for-loop to run 3 times -->
     @for (task of selectedUserTasks; track task.id){
       <li>
-        <app-task />
+        <!-- bind the property of the task -->
+        <app-task [task]="task"/>
       </li>
     }
   </ul>

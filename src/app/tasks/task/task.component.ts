@@ -1,4 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+//Define the task component
+interface Task {
+  id:string;
+  userId:string;
+  title:string;
+  summery:string;
+  dueDate: string
+}
 
 @Component({
   selector: 'app-task',
@@ -8,5 +17,6 @@ import { Component } from '@angular/core';
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
-
+  // now we have to export the task component and also have to define the task
+  @Input({required:true}) task!:Task
 }
