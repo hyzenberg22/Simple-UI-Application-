@@ -1,7 +1,19 @@
 //---------------------all the Imports----------------------------
-import { Component,  EventEmitter,  Input, Output, } from '@angular/core';
+import { Component,  EventEmitter,  Input, output, Output } from '@angular/core';
 
+// deining the user object type using the type defination feature
+// type User = {
+//   id: string;
+//   name: string;
+//   avater: string;
+// }
 
+// we also can define the user using the interface in typescript
+interface User {
+  id: string;
+  name: string;
+  avater: string;
+}
 
 
 
@@ -13,11 +25,15 @@ import { Component,  EventEmitter,  Input, Output, } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avater!:string;
-  @Input({required:true}) name!:string;
-  @Output() select = new EventEmitter();
+  // We can define the type and the user properties
+  @Input({required: true}) user!:User;
+  // Instead of the below data we can take the user object directly
+  // @Input({required: true}) id!: string;
+  // @Input({required: true}) avater!:string;
+  // @Input({required:true}) name!:string;
+  // select = output<string>();
 
+  @Output() select = new EventEmitter<string>();
 
   // avatar = input.required<string>();
   // name = input.required<string>();
@@ -27,11 +43,11 @@ export class UserComponent {
   //   return 'assets/users/' + this.avatar();
   // })
   get imagePath(){
-    return 'assets/users/' + this.avater;
+    return 'assets/users/' + this.user.avater;
   }
 
   onSelectUser () {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 
 }

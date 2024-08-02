@@ -3,40 +3,20 @@
 
 <!-- We can use the self closing tags if ther are noting in between  -->
 <main>
-  <ul id="users">
-    <li>
-      <app-user
-        [id]="users[0].id"
-        [avater]="users[0].avatar"
-        [name]="users[0].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [id]="users[1].id"
-        [avater]="users[1].avatar"
-        [name]="users[1].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [id]="users[2].id"
-        [avater]="users[2].avatar"
-        [name]="users[2].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [id]="users[3].id"
-        [avater]="users[3].avatar"
-        [name]="users[3].name"
-        (select)="onSelectUser($event)"
-      />
-    </li>
-  </ul>
 
-  Tasks Of that USER
+  <ul id="users">
+    <!-- Instead of the user hardcoded we can use an array and iterate -->
+    @for (user of users; track user.id) {
+    <li><app-user [user]="user" (select)="onSelectUser($event)" /></li>
+    }
+  </ul>
+  <!-- This is the task component template -->
+  <!-- Now we can make it inside the conditional statement and run if the selectedUser is defined
+  now the Ts will understand that the selected user can't be undefined inside the conditional operator -->
+  @if (selectedUser) {
+    <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name"/>
+  }@else {
+    <p id="fallback"> Select the User to see the details </p>
+  }
+
 </main>

@@ -1,0 +1,17 @@
+<section id="tasks">
+  <header>
+    <h2>{{ name }}'s Tasks</h2>
+    <menu>
+      <button>Add task</button>
+    </menu>
+  </header>
+
+  <ul>
+    <!-- now we take the tasks and iterate the for-loop to run 3 times -->
+    @for (task of selectedUserTasks; track task.id){
+      <li>
+        <app-task />
+      </li>
+    }
+  </ul>
+</section>
