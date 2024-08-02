@@ -1,5 +1,8 @@
 //---------------------all the Imports----------------------------
 import { Component,  EventEmitter,  Input, output, Output } from '@angular/core';
+import{User} from './user.model';
+// Import the usermodel typedefination from another file
+
 
 // deining the user object type using the type defination feature
 // type User = {
@@ -9,11 +12,13 @@ import { Component,  EventEmitter,  Input, output, Output } from '@angular/core'
 // }
 
 // we also can define the user using the interface in typescript
-interface User {
-  id: string;
-  name: string;
-  avater: string;
-}
+// interface User {
+//   id: string;
+//   name: string;
+//   avater: string;
+// }
+
+// we have made another file for the above definations
 
 
 
