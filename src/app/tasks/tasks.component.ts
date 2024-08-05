@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
@@ -22,7 +23,7 @@ export class TasksComponent {
       id : 't1',
       userId: 'u1',
       title: 'Master Angular',
-      summery : 'Learn the basic tasks and the advance features in the anguar',
+      summery : 'Learn the basic tasks and the advance features in the angular',
       dueDate: '2025-12-23'
     },
     {
@@ -61,4 +62,9 @@ export class TasksComponent {
     return this.tasks.filter((task) => task.userId === this.userId);
   }
 
+
+  // Add the event lisner and the method in it
+  onCompleteTask(id:string){
+    this.tasks = this.tasks.filter((task) => task.id !== id )
+  }
 }

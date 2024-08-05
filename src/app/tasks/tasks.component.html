@@ -11,7 +11,8 @@
     @for (task of selectedUserTasks; track task.id){
       <li>
         <!-- bind the property of the task -->
-        <app-task [task]="task"/>
+        <!-- now we listen the method we want in the click listner -->
+        <app-task [task]="task" (complete)="onCompleteTask($event)"/>
       </li>
     }
   </ul>

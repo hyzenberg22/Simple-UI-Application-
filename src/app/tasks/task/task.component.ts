@@ -22,11 +22,11 @@ export class TaskComponent {
 
 
   //set a event listner property
-  @Output() complete = new EventEmitter();
+  @Output() complete = new EventEmitter<string>();
 
 
   // adding a method
   onCompleteTask(){
-    this.complete.emit(this.user.id);
+    this.complete.emit(this.task.id);
   }
 }
